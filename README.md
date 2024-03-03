@@ -1,4 +1,4 @@
-#Simple Chat App with Group and Channel Functionalities
+# Simple Chat App with Group and Channel Functionalities
 
 This is a simple chat application implemented in Python using a server-client architecture. The app allows users to create groups, join groups, leave groups, create channels, join channels, leave channels, and send messages to groups and channels.
 
