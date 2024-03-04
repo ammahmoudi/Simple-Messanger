@@ -14,9 +14,9 @@ This is a simple chat application implemented in Python using a server-client ar
 
 ## Screenshots
 
-![sc1](/images/sc (1).png)
+![sc1](/images/sc(1).png)
 
-![sc2](/images/sc (2).png)
+![sc2](/images/sc(2).png)
 
 
 ## Usage
