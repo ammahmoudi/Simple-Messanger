@@ -158,7 +158,7 @@ def leave_channel(client, channel_name):
 
 def send_to_group(sender_client, group_name, message):
     if group_name in groups:
-        if sender_client not in groups[group_name]['clients']:
+        if sender_client in groups[group_name]['clients']:
             current_time = time.strftime('%Y-%m-%d %H:%M:%S')
             sender_name = clients[sender_client]
             for client_socket in groups[group_name]['clients']:
