@@ -12,6 +12,12 @@ This is a simple chat application implemented in Python using a server-client ar
 - **Simple Command Line Interface (CLI)**: The app features a simple CLI for user interaction.
 - **Usage of Sockets**: Sockets are used for communication between clients and the server.
 
+## Screenshots
+
+![sc1](/images/sc (1).png)
+![sc2](/images/sc (2).png)
+
+
 ## Usage
 
 1. Run `chat_server.py` on your server machine.
