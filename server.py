@@ -64,22 +64,28 @@ def handle_client(client, username):
                             client.send("Usage: /channelleave channel_name".encode())
                     # Check if message is for a group
                     elif command.startswith('/group'):
-                        if len(parts) == 3:
+                        if len(parts) >1:
                             args=parts[1].split(maxsplit=1)
+                            if len(args) >1:
 
-                            group_name, group_message = args[0], args[1]
-                            send_to_group(client, group_name, group_message)
+                                group_name, group_message = args[0], args[1]
+
+                                send_to_group(client, group_name, group_message)
+                            else:
+                                client.send("Usage: /group group_name message".encode())
                         else:
                             client.send("Usage: /group group_name message".encode())
 
                     # Check if message is for a channel
                     elif command.startswith('/channel'):
 
-                        if len(parts) == 3:
+                        if len(parts) > 1:
                             args = parts[1].split(maxsplit=1)
-                            channel_name, channel_message = args[0], args[1]
-                            send_to_channel(client, channel_name, channel_message)
-
+                            if len(args)>1:
+                                channel_name, channel_message = args[0], args[1]
+                                send_to_channel(client, channel_name, channel_message)
+                            else:
+                                client.send("Usage: /channel channel_name message".encode())
                         else:
                             client.send("Usage: /channel channel_name message".encode())
                 
