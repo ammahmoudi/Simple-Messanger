@@ -23,6 +23,7 @@ def handle_client(client, username):
                 if decrypted_message.startswith('/'):
                     parts = decrypted_message.split(maxsplit=1)
                     command = parts[0]
+                    print(command)
                     if command == '/groupcreate':
                         if len(parts) > 1:
                             group_name = parts[1]
@@ -90,11 +91,13 @@ def handle_client(client, username):
                             client.send("Usage: /channel channel_name message".encode())
                 
 
-                else:
+                    elif command.startswith('/message'):
                         # Broadcast the message to all clients except the sender
+                        message=f"[{current_time}] ({username}): {decrypted_message.split(maxsplit=1)[1]}".encode()
+                        # print(message)
                         for client_socket in clients:
                             if client_socket != client:
-                                client_socket.send(f"[{current_time}] ({username}): {decrypted_message}".encode())
+                                client_socket.send(message)
         except:
             # If an error occurs, remove the client and close the connection
             print(f"Connection with {username} closed.")
